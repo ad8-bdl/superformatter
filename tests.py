@@ -70,6 +70,31 @@ Chapter IV
             'Action: Back / Logout / Delete 34'
         )
 
+    def test_recursive(self):
+        sf = SuperFormatter()
+        self.assertEqual(
+            sf.format('''{names:repeat:{{item.upper:call}}
+}''', names=["eric", "graham", "terry"]),
+            '''ERIC
+GRAHAM
+TERRY
+'''
+        )
+
+    def test_repeat_list_embedded(self):
+        sf = SuperFormatter()
+        self.assertEqual(
+            sf.format('''Hottest 100 {year}:
+{tracks:repeat:{{item[artist].title:call}} - {{item[track].title:call}}
+}''', year="2009", tracks=[{'artist':"nirvana", 'track':"smells like teen spirit"},
+              {'artist':"rage against the machine", 'track':"killing in the name"},
+              {'artist':"jeff buckley", 'track':"hallelujah"}]),
+            '''Hottest 100 2009:
+Nirvana - Smells Like Teen Spirit
+Rage Against The Machine - Killing In The Name
+Jeff Buckley - Hallelujah
+'''
+        )
 
 if __name__ == '__main__':
     unittest.main()
