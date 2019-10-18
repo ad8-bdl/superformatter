@@ -19,7 +19,7 @@ Usage
 
 It does everything the regular `format()` method does (and that's already a lot, see `https://pyformat.info/ <https://pyformat.info/>`_)
 
-But it also ca:
+But it also can:
 
 - call methods:
 
