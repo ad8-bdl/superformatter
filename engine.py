@@ -1,12 +1,10 @@
-""" World's simplest Template engine.
-ref. https://github.com/ad8-bdl/superformatter
-"""
+""" World's simplest Template engine. """
 
 import string
 
 
 class SuperFormatter(string.Formatter):
-    """ Replacement string.Formatter. """
+    """ World's simplest Template engine. """
 
     def format_field(self, value, format_spec):
         if format_spec.startswith('repeat:'):
