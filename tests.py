@@ -1,6 +1,6 @@
 import unittest
 
-from engine import SuperFormatter
+from superformatter.engine import SuperFormatter
 
 
 class TestSuperFormatterMethods(unittest.TestCase):
